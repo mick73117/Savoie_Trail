@@ -1,0 +1,300 @@
+@import "~bootstrap/scss/bootstrap" ;
+
+body {
+	background-image: url("/images/people-2591874_1920.jpg");
+	background-repeat: no-repeat;
+}
+
+.icone {
+    width: 2rem;
+}
+
+h5 {
+	color: white !important;
+}
+
+// Navbar
+.margin {
+	margin-left: 30rem;
+}
+.marginLogin {
+	margin-left: 9rem;
+}
+.navbar {
+    width: 100%;
+}
+
+.login {
+	margin-right: 13rem;
+}
+
+.navbar-brand {
+	margin-top: 2rem;
+	margin-right: 2rem;
+    margin-left: 1rem;
+}
+
+.dropdown-toggle {
+	margin-top: 2rem;
+}
+
+.logo {
+	height: 7rem;
+}
+
+
+
+//navtabs
+.imgBan {
+	width: 69.5rem;
+	border-radius: 0% 0% 5% 5%;
+}
+
+.navban {
+    background-image: url("../../public/images/bann.png");
+    border: solid, 1px;
+	border-radius:0% 0% 5% 5%;
+	background-repeat: no-repeat;
+	height: 14rem;
+}
+
+.navtrails {
+	display: inline-block;
+	width: 10rem;
+	height: 11rem;
+	margin-left: 14%;
+	margin-top: 14%;
+}
+
+.navpagination {
+	margin-left: 35%
+}
+
+.navtabbackground {
+	height: 14rem;
+}
+
+.navscrollbar {
+	overflow-x:scroll;
+	height: 11rem;
+  }
+
+
+ // Leaflet
+#mapid { 
+    margin-top: 10%;
+    margin: auto;
+    height: 30rem; 
+    width: 69rem;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #ffffff63 !important;
+	background-clip: border-box;
+	border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+
+#mapidinfo { 
+    margin-top: 5%;
+    // margin: auto;
+    height: 25rem; 
+    width: 49rem;
+}
+ 
+.geo {
+    height: 1.5rem;
+}
+
+
+
+
+//checkbox_Users
+.switch_box{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+}
+
+/* Switch 1 Specific Styles Start */
+input[type="checkbox"].switch_1{
+	font-size: 30px;
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	        appearance: none;
+	width: 1.5em;
+	height: 0.5em;
+	background: rgb(190, 4, 4);
+	border-radius: 3em;
+	position: relative;
+	cursor: pointer;
+	outline: none;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+  }
+  
+  input[type="checkbox"].switch_1:checked{
+	background: #05e029cc;
+  }
+  
+  input[type="checkbox"].switch_1:after{
+	position: absolute;
+	content: "";
+	width: 0.5em;
+	height: 0.5em;
+	border-radius: 50%;
+	background: #fff;
+	-webkit-box-shadow: 0 0 .25em rgba(0,0,0,.3);
+	        box-shadow: 0 0 .25em rgba(0,0,0,.3);
+	-webkit-transform: scale(.7);
+	        transform: scale(.7);
+	left: 0;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+  }
+  
+  input[type="checkbox"].switch_1:checked:after{
+	left: calc(100% - 0.5em);
+  }
+
+
+  .custom-file-input ~ .custom-file-label:lang(fr)::after {
+	content: "Choisir...";
+  }
+  .custom-file-input ~ .custom-file-label:lang(es)::after {
+	content: "Elegir...`";
+  }
+
+  // trails
+  .trails {
+	display: grid;
+	grid-template-columns: repeat(4, 3fr);
+	grid-gap: 1%;
+	// grid-auto-rows: minmax(100px, auto);
+	margin: 2%;
+  }
+
+  .page-item.active .page-link {
+    z-index: 1;
+    color: #fff !important;
+	background-color:#28a745 !important;
+	border-color:#28a745 !important;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #28a745 !important;
+	background-color:#fff;
+	border: 1px solid#dee2e6;
+}
+
+.page-link:hover {
+    z-index: 2;
+    color: #28a745 !important;
+	text-decoration: none;
+	background-color:#e9ecef;
+	border-color:#dee2e6;
+}
+
+  .mytrails {
+	display: grid;
+	grid-template-columns: repeat(5, 3fr);
+	grid-gap: 1%;
+  }
+
+  .alltrails {
+	  display: inline-block;
+	//   width: 20rem;
+	//   height: 20rem;
+  }
+  #card-img-top {
+	  width: 17rem;
+	  max-height: 13rem;
+	  border-top-left-radius: calc(0.25rem - 1px);
+	  border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.title {
+	margin: auto;
+}
+
+//   #card-img-top:hover {
+// 	  width: 30rem;
+// 	  z-index: 5;
+//   }
+
+  .formTrail {
+	margin-left: 30%;
+	margin-right: 30%;
+  }
+
+//   .card-body {
+// 	  background-color: #5ccd808a;
+//   }
+
+  #link {
+	  color: black;
+  }
+
+  //login
+  .cardLogin {
+	border-style: solid;
+	border-radius:1%;
+	margin-top:5%;
+	margin-left: 25%;
+	margin-right: 25%;
+	padding: 1%;
+	border-color: #93b38bd6;
+	background-color: #68e14036;
+  }
+
+//   .show {
+// 	margin-left: 11.2rem;
+//     position: absolute;
+//     left: 0;
+//     z-index: 1000;
+//     display: none;
+//     float: left;
+//     min-width: 10rem;
+//     padding: 0.5rem 0;
+//     margin: 0.125rem 0 0;
+//         margin-left: 0px;
+//     font-size: 1rem;
+//     color: #212529;
+//     text-align: left;
+//     list-style: none;
+//     background-color: #fff;
+//     background-clip: padding-box;
+//     border: 1px solid rgba(0, 0, 0, 0.15);
+//     border-radius: 0.25rem;
+//   }
+ 
+
+
+.scrollbar {
+	overflow-x:scroll;
+	height: 25rem;
+  }
+
+.scroller {
+	height: 17rem;
+	overflow-y: scroll;
+  }

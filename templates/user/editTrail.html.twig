@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<div class="formTrail">
+                {{ form_start(form) }}
+                 {{ form_row(form.titre) }}
+                 {{ form_row(form.image, {
+                    attr: {
+                        'placeholder': 'Choisir une image',
+                    }
+                }) }}
+               {{ form_row(form.niveau) }}
+                {{ form_row(form.denivele) }}
+                {{ form_row(form.altitude_de_depart) }}
+                {{ form_row(form.altitudedarrivee) }}
+                {{ form_row(form.tempsalamontee) }}
+                {{ form_row(form.tempsaladescente) }}
+                {{ form_row(form.tempstotal) }}
+                {{ form_row(form.description) }} 
+                {{ form_row(form.gpx, {
+                    attr: {
+                        'placeholder' : 'Choisir fichier GPX',
+                    }
+                }) }}
+                <ul id="album" data-prototype="{{ form_widget(form.album.vars.prototype)|e('html_attr') }}"></ul>
+            {{ form_end(form) }}
+  
+</div>
+{% endblock %}
+
+{% block javascripts %}
+<script>
+  $('.custom-file-input').on('change', function(event) {
+        var inputFile = event.currentTarget;
+        $(inputFile).parent()
+            .find('.custom-file-label')
+            .html(inputFile.files[0].name);
+    });
+
+    let collectionHolder;
+  let addAlbumButton = $('<button type="button" class="btn btn-success font-weight-bold">Ajouter photo d\'album</button>');
+  let newLinkLi = $('<div class="add_album"></div>').append(addAlbumButton);
+
+  jQuery(document).ready(function () {
+    collectionHolder = $('#album');
+    collectionHolder.append(newLinkLi);
+    collectionHolder.data('index', collectionHolder.find(':input').length);
+
+    addAlbumButton.click(function (e) {
+      addAlbumForm(collectionHolder, newLinkLi);
+    });
+
+    collectionHolder.find('.panel').each(function () {
+      addRemoveButton($(this));
+    });
+
+  });
+
+  function addAlbumForm(collectionHolder, newLinkLi) {
+    let prototype = collectionHolder.data('prototype');
+    let index = collectionHolder.data('index');
+    let newForm = prototype;
+    newForm = newForm.replace(/__name__/g, index);
+    collectionHolder.data('index', index + 1);
+
+    let panel = $('<li class="panel"></li>').append(newForm);
+    addRemoveButton(panel);
+    newLinkLi.before(panel);
+    //affiche nom dans champ 
+    $('.custom-file-input').on('change', function(event) {
+        var inputFile = event.currentTarget;
+        $(inputFile).parent()
+            .find('.custom-file-label')
+            .html(inputFile.files[0].name);
+    });
+  }
+
+  function addRemoveButton(panel) {
+    let removeButton = $('<button type="button" class="btn btn-danger font-weight-bold">Supprimer</button>');
+    let container = $('<div class=remove-album></div>')
+    container.append(removeButton);
+    removeButton.click(function (e) {
+      $(e.target).parents('.panel').slideUp(1000, function () {
+        $(this).remove();
+      });
+    });
+
+    panel.append(container);
+  }
+
+
+</script>
+{% endblock %}

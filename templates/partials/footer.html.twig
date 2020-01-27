@@ -1,0 +1,39 @@
+{% if is_granted('ROLE_ADMIN') %}
+{% elseif is_granted('ROLE_MANAGER') %}
+{% else %}
+{% endif %}
+ <div class="container m-5">
+  <div class="row">
+    <div class="col-sm-3">
+      <img class="card-img-top" src="/images/197.jpg" alt="Card image cap">
+    </div>
+    <div class="col-sm-3">
+      <div class="card">
+          <div class="card-body">
+            <h6 class="card-title">Faune</h6>
+              <p class="card-text">Lors de promenades vous serez amenés à les rencontrer. </p>
+            <a href="#" class="btn btn-success">En savoir plus</a>
+          </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <img class="card-img-top" src="/images/200.jpg" alt="Card image cap">
+    </div>
+    <div class="col-sm-3">
+      <div class="card">
+          <div class="card-body">
+            <h6 class="card-title">Flore</h6>
+              <p class="card-text">Ne passez pas à côté des fleurs de nos montagnes... </p>
+            <a href="#" class="btn btn-success">En savoir plus</a>
+          </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+  
+
+  
+  
+  

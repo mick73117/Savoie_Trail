@@ -1,0 +1,51 @@
+
+
+{% if app.user %}
+<div class="container mb-5 mt-2">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active text-success" id="home-tab" data-toggle="tab" href="#top" role="tab" aria-controls="top" aria-selected="true">▲</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link text-success" id="home-tab" data-toggle="tab" href="#favoris" role="tab" aria-controls="favoris" aria-selected="true">Favoris</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-success" id="profile-tab" data-toggle="tab" href="#trails" role="tab" aria-controls="trails" aria-selected="false">Mes trails</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link text-success" id="contact-tab" data-toggle="tab" href="#compte" role="tab" aria-controls="compte" aria-selected="false">Compte</a>
+            </li> -->
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="top" role="tabpanel" aria-labelledby="contact-tab"><div class="mt-4" id="cont_1b4e4d5e8d2fc26c57e62b120655c03e"><script type="text/javascript" async src="https://www.tameteo.com/wid_loader/1b4e4d5e8d2fc26c57e62b120655c03e"></script></div></div>
+            <div class="tab-pane fade navban" id="favoris" role="tabpanel" aria-labelledby="favoris-tab">...</div>
+            <div class="tab-pane fade navban" id="trails" role="tabpanel" aria-labelledby="trails-tab">
+              <div class="mytrails  navscrollbar">
+                {% for trail in trails|reverse %}
+                <a href="{{ path('mes_trails_info', {'id': trail.id})}}">
+                <div class="container alltrails">
+                      <div class="card navtrails navscrollbar">
+                              <img class="card-img-top" src="{{ trail.image}}" alt="Card image cap">
+                              <div class="card-body">
+                              <h6 class="card-title">{{ trail.titre }}</h6>
+                          </div>
+                      </div>
+                </div>
+                </a>
+                {% endfor %}
+
+              </div>
+              {# <div class='navigation navpagination'>
+                  {{ knp_pagination_render(trails) }}
+              </div> #}
+              </div>
+            <div class="tab-pane fade" id="compte" role="tabpanel" aria-labelledby="compte-tab">...</div>
+
+          </div>
+    </div>
+</nav>
+</div>
+{% endif %}
+
+
+
